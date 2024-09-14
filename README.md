@@ -22,7 +22,7 @@ docker build -t techroc-app-image .
 
 ### Step 4. Build and Run the Containers
 ```
-docker-compose -f docker-compose-local.yml up --build
+docker-compose up -d
 ```
 
 ### Step 5. Apply the migrations
