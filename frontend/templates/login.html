@@ -43,7 +43,7 @@
                                     </div>
 
                                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                        <button type="button" id="loginBtn" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg">Register
+                                        <button type="button" id="loginBtn" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg">Login
                                         </button>
                                     </div>
 
@@ -84,11 +84,15 @@
                 password: password,
             }),
             headers: { 'X-CSRFToken': csrfToken },
-            success: function () {
+            success: function (response) {
+                console.log(response.access)
+                console.log(response.refresh)
+                localStorage.setItem("access_token", response.access);
+                localStorage.setItem("refresh_token", response.refresh);
                 Swal.fire('Success', 'User Logged In successfully!', 'success');
                 setTimeout(function() {
-                    window.location.href = '/login';
-                }, 3000);
+                    window.location.href = '/secret';
+                }, 2000);
             },
             error: function (xhr) {
                 Swal.fire('Error',xhr.responseJSON.detail);
