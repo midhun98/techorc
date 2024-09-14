@@ -1,0 +1,35 @@
+name: Ruff Linter
+
+on:
+  push:
+    branches:
+      - master
+      - 'feature/**'
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+
+    - name: Install Ruff
+      run: pip install ruff
+
+    - name: Run Ruff Check
+      run: ruff check .
+
+    - name: Run Ruff Check with Fixes
+      run: ruff check --fix .
+
+    - name: Run Ruff Format
+      run: ruff format .
