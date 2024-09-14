@@ -11,7 +11,7 @@ DB_ENGINE=django.db.backends.postgresql
 DB_NAME=techorc
 DB_USER=postgres
 DB_PASSWORD=root
-DB_HOST=localhost
+DB_HOST=postgres
 DB_PORT=5432
 ```
 
