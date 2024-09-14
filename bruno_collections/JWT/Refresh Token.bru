@@ -1,0 +1,15 @@
+meta {
+  name: Refresh Token
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseurl}}/api/token/refresh/
+  body: formUrlEncoded
+  auth: none
+}
+
+body:form-urlencoded {
+  refresh: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyNjM4MzQwNiwiaWF0IjoxNzI2Mjk3MDA2LCJqdGkiOiI3YjVlYzBhNDE3ZDA0YTNmYjcyYWM3MTRmNmRlMzEzNCIsInVzZXJfaWQiOjJ9.HC7Kjq6Jvr9nHDAI47FDtRoAcGndwgy1r4Ey9mrkbho
+}
