@@ -17,7 +17,7 @@ DB_PORT=5432
 
 ### Step 3. Building a Docker Image
 ```
-docker build -t techroc-app-image .
+docker build -t techorc-app-image .
 ```
 
 ### Step 4. Build and Run the Containers
