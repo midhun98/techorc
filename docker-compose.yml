@@ -10,3 +10,20 @@ services:
       - .:/app
     env_file:
       - .env
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres
+    container_name: postgres-container
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+    - POSTGRES_DB=${DB_NAME:-techorc}
+    - POSTGRES_USER=${DB_USER:-postgres}
+    - POSTGRES_PASSWORD=${DB_PASSWORD:-root}
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:
