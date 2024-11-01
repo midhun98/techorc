@@ -25,7 +25,7 @@ docker build -t techorc-app-image .
 docker-compose up -d
 ```
 
-### Step 5. Apply the migrations..
+### Step 5. Apply the migrations.
 ```
 docker-compose exec app python manage.py migrate
 ```
